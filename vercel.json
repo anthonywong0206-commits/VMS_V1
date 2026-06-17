@@ -1,9 +1,6 @@
 {
-  "framework": "vite",
-  "installCommand": "corepack enable && corepack pnpm install --no-frozen-lockfile",
-  "buildCommand": "corepack pnpm run build",
-  "outputDirectory": "dist",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+  "cleanUrls": true,
+  "headers": [
+    { "source": "/(.*)", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] }
   ]
 }

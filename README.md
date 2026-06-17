@@ -1,44 +1,39 @@
-# Volunteer Hours Management System
+# Volunteer Hours Management System - Vercel Safe Static Version
 
-中文 NGO 義工服務時數管理網站，可部署到 Vercel。
+這是無 npm / pnpm / build step 的靜態版本，用來避開 Vercel install timeout。
+
+## 部署方法
+
+1. 將本資料夾三個檔案放到 GitHub repo 根目錄：
+   - index.html
+   - vercel.json
+   - README.md
+2. 刪除 repo 內舊有檔案：
+   - package.json
+   - package-lock.json
+   - pnpm-lock.yaml
+   - vite.config.js
+   - node_modules
+   - src 資料夾
+3. Vercel Project Settings：
+   - Framework Preset: Other
+   - Build Command: 留空
+   - Install Command: 留空
+   - Output Directory: .
 
 ## 功能
-- Dashboard KPI、排行榜、Chart.js 圖表
-- 活動服務時數，支援多選義工及重複建立
-- 個案服務時數，支援手動、批量及 Excel / CSV 匯入
+
+- Dashboard
+- 活動時數管理
+- 個案時數管理
 - 義工資料管理
-- 津貼計算：總時數 × 每小時津貼 + 交通費
-- 使用上載附件作 Excel 模板匯出：
-  - `public/templates/service-hours-template.xlsx`
-  - `public/templates/allowance-master-template.xlsx`
-- PDF / Word 津貼簽收表
-- Supabase schema
-
-## 安裝
-```bash
-npm install
-npm run dev
-```
-
-## Vercel 部署
-1. 上載整個資料夾到 GitHub。
-2. Vercel Import Project。
-3. Framework Preset 選 Vite。
-4. Build Command: `npm run build`。
-5. Output Directory: `dist`。
-6. 如使用 Supabase，加入環境變數：
-   - `VITE_SUPABASE_URL`
-   - `VITE_SUPABASE_ANON_KEY`
-
-## Supabase
-在 Supabase SQL Editor 執行：
-`supabase/schema.sql`
-
-## 模板替換
-如要使用正式表格，覆蓋以下同名檔案：
-- `public/templates/service-hours-template.xlsx`
-- `public/templates/allowance-master-template.xlsx`
-- `public/templates/allowance-receipt-template.docx`
+- CSV 匯入及匯出
+- 服務時數紀錄表預覽及列印 PDF
+- 津貼簽收表預覽及列印 PDF
+- 深色模式
+- Mobile Responsive
+- JSON 備份及還原
 
 ## 注意
-瀏覽器直接生成 PDF / Word 的版面未必可 100% 等同複雜 Word Mail Merge。Excel 匯出採用原 Excel 模板填入資料，最能保留附件格式。
+
+此版本為「先部署成功」版本，資料儲存在瀏覽器 LocalStorage。正式多用戶 / Supabase 版本可在部署成功後再逐步加入。
