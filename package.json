@@ -5,25 +5,23 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@supabase/supabase-js": "latest",
-    "@vitejs/plugin-react": "latest",
-    "vite": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "lucide-react": "latest",
-    "chart.js": "latest",
-    "react-chartjs-2": "latest",
-    "xlsx": "latest",
-    "exceljs": "latest",
-    "file-saver": "latest",
-    "jspdf": "latest",
-    "jspdf-autotable": "latest",
-    "docx": "latest"
+    "@supabase/supabase-js": "^2.45.4",
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.10",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "lucide-react": "^0.468.0",
+    "chart.js": "^4.4.6",
+    "react-chartjs-2": "^5.2.0",
+    "xlsx": "^0.18.5",
+    "file-saver": "^2.0.5",
+    "jspdf": "^2.5.2",
+    "jspdf-autotable": "^3.8.4"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17",
-    "postcss": "latest",
-    "autoprefixer": "latest"
+    "postcss": "^8.4.49",
+    "autoprefixer": "^10.4.20"
   },
   "type": "module"
 }
